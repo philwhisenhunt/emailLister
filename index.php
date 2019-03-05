@@ -9,17 +9,19 @@ $receivedPost = file_get_contents('php://input');
 // echo $receivedPost;
 
 // echo "and now a var dump version: ";
-// var_dump($receivedPost);
+var_dump($receivedPost);
+
 
 // echo "\n";
 $notJson = json_decode($receivedPost);
+echo "Your name is: " . $notJson->name;
 // echo "this is notJSON: \n";
-print_r($notJson);
+// print_r($notJson);
 echo "\n \n";
 
 
 $nowJsonAgain = json_encode($notJson);
-echo $nowJsonAgain["name"] . " is the name. ";
+// echo $nowJsonAgain["name"] . " is the name. ";
 // var_dump($nowJsonAgain);
 //echo $nowJsonAgain;
 foreach($notJson as $line){
