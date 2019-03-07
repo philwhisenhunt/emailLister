@@ -11,7 +11,7 @@
     <body>
        <h1>Home page</h1>
 
-       <form action="POST">
+       <form action="POST" id="myform">
 
         <input type="text" name="name">
         <br>
@@ -19,9 +19,30 @@
         <br>
         <input type="text" name="age">
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit" >Submit</button>
        </form>
         
-        <script src="" async defer></script>
+        <script src="" async defer>
+        //build the json
+        //post the json
+        //then connect it to php file
+           // document.getElementById("myForm").submit();
+
+
+
+    function myFunc(objectHere){
+        fetch('api.php', {method: "POST"})
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(myJson) {
+                console.log(JSON.stringify(myJson));
+            });
+}
+
+    document.getElementById('myform').addEventListener('click', myFunc);
+            
+ 
+        </script>
     </body>
 </html>
