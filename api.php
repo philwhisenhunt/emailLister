@@ -14,7 +14,7 @@ var_dump($receivedPost);
 
 // echo "\n";
 $notJson = json_decode($receivedPost);
-echo "Your name is: " . $notJson->name;
+echo "Your name is: " . $notJson->name . ", ";
 echo "And your email address is " . $notJson->email;
 // echo "this is notJSON: \n";
 // print_r($notJson);
@@ -22,6 +22,9 @@ echo "\n \n";
 
 
 $nowJsonAgain = json_encode($notJson);
+//below doesn't work
+echo "Your name is: " . $nowJsonAgain->name . ", ";
+
 // echo $nowJsonAgain["name"] . " is the name. ";
 // var_dump($nowJsonAgain);
 //echo $nowJsonAgain;
